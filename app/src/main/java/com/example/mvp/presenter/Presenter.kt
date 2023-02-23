@@ -1,11 +1,13 @@
 package com.example.mvp.presenter
 
+import com.example.mvp.model.ColorModel
 import com.example.mvp.model.CountModel
 import com.example.mvp.view.MainActivityView
 
 class Presenter {
 
     private val countModel = CountModel()
+    private val colors = ColorModel().colors
     private lateinit var view : MainActivityView
 
     fun increment() {
@@ -26,14 +28,20 @@ class Presenter {
         val count = countModel.getCount()
 
         view.onUpdateState(count)
-
         if (count == 10) view.showToast()
-
         if (count == 15) changeColor()
     }
 
     private fun changeColor() {
-        view.changeColor(countModel.changeColor())
+        val x = (1..colors.size).random()
+        view.changeColor(
+            when (x) {
+                1 -> colors[0]
+                2 -> colors[1]
+                3 -> colors[2]
+                else -> colors[3]
+            }
+        )
     }
 
 

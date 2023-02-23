@@ -25,14 +25,4 @@ class CountModel {
         return count
 //        return prefs.getInt("KEY", 0)
     }
-
-    fun changeColor(): String {
-        val x = (1..4).random()
-        return when (x) {
-            1 -> "#FF000000"
-            2 -> "#FF0000FF"
-            3 -> "#FF00FF00"
-            else -> "#FFFF0000"
-        }
-    }
 }
