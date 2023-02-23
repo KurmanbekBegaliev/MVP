@@ -1,7 +1,7 @@
 package com.example.mvp.presenter
 
 import android.content.Context
-import com.example.mvp.MainActivityView
+import com.example.mvp.view.MainActivityView
 import com.example.mvp.model.CountModel
 
 class Presenter(context: Context) {

@@ -2,8 +2,6 @@ package com.example.mvp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mvp.MainActivityView
-import com.example.mvp.R
 import com.example.mvp.databinding.ActivityMainBinding
 import com.example.mvp.presenter.Presenter
 
