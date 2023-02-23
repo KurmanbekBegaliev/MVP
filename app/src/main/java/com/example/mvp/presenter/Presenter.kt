@@ -2,6 +2,7 @@ package com.example.mvp.presenter
 
 import com.example.mvp.view.MainActivityView
 import com.example.mvp.model.CountModel
+import kotlin.random.Random
 
 class Presenter {
 
@@ -23,7 +24,27 @@ class Presenter {
     }
 
     private fun updateView() {
-        view.onUpdateState(countModel.getCount())
+        val count = countModel.getCount()
+
+        view.onUpdateState(count)
+
+        if (count == 10) view.showToast()
+
+        if (count == 15) changeColor()
     }
+
+    private fun changeColor() {
+        val x = (1..4).random()
+        view.changeColor(
+            when (x) {
+                1 -> "#FF000000"
+                2 -> "#FF0000FF"
+                3 -> "#FF00FF00"
+                else -> "#FFFF0000"
+            }
+        )
+
+    }
+
 
 }

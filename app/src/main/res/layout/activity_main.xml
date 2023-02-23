@@ -11,19 +11,19 @@
         android:id="@+id/tv_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="0"/>
+        android:textSize="32sp"
+        android:text="@string/_0"/>
 
     <Button
         android:id="@+id/btn_increment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"/>
+        android:text="@string/plus"/>
 
     <Button
         android:id="@+id/btn_decrement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"/>
+        android:text="@string/minus"/>
 
 </LinearLayout>
