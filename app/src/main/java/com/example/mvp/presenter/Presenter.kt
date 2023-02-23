@@ -35,6 +35,7 @@ class Presenter {
     private fun changeColor() {
         val x = (1..colors.size).random()
         view.changeColor(color = colors[x-1])
+
     }
 
 
