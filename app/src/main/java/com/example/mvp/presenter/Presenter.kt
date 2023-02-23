@@ -1,12 +1,11 @@
 package com.example.mvp.presenter
 
-import android.content.Context
 import com.example.mvp.view.MainActivityView
 import com.example.mvp.model.CountModel
 
-class Presenter(context: Context) {
+class Presenter {
 
-    private val countModel = CountModel(context)
+    private val countModel = CountModel()
     private lateinit var view : MainActivityView
 
     fun increment() {
@@ -23,7 +22,7 @@ class Presenter(context: Context) {
         this.view = view
     }
 
-    fun updateView() {
+    private fun updateView() {
         view.onUpdateState(countModel.getCount())
     }
 

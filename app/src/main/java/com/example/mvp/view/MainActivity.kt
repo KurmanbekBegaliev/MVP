@@ -8,15 +8,16 @@ import com.example.mvp.presenter.Presenter
 class MainActivity : AppCompatActivity(), MainActivityView {
 
     private lateinit var binding : ActivityMainBinding
-    private lateinit var presenter : Presenter
+    private  var presenter = Presenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = Presenter(context = applicationContext)
+
+//        presenter = Presenter(context = applicationContext)
         presenter.initView(this)
-        presenter.updateView()
+//        presenter.updateView()
         onClick()
     }
 

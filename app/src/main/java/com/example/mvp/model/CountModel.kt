@@ -1,26 +1,28 @@
 package com.example.mvp.model
 
-import android.content.Context
+class CountModel {
 
-class CountModel(context: Context) {
+//    private var prefs = context.getSharedPreferences(
+//        "PREF",
+//        Context.MODE_PRIVATE
+//    )
 
-    private var prefs = context.getSharedPreferences(
-        "PREF",
-        Context.MODE_PRIVATE
-    )
-
-//    private var count: Int = 0
-
+    private var count: Int = 0
 
     fun increment() {
-        var count = getCount()
-        prefs.edit().putInt("KEY", ++count).apply()
+        count++
+//        var count = getCount()
+//        prefs.edit().putInt("KEY", ++count).apply()
     }
 
     fun decrement() {
-        var count = getCount()
-        prefs.edit().putInt("KEY", --count).apply()
+        count--
+//        var count = getCount()
+//        prefs.edit().putInt("KEY", --count).apply()
     }
 
-    fun getCount() = prefs.getInt("KEY", 0)
+    fun getCount(): Int {
+        return count
+//        return prefs.getInt("KEY", 0)
+    }
 }
